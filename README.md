@@ -13,10 +13,22 @@ A PowerShell module for controlling Windows power management settings, including
 
 ## Installation
 
-### From PowerShell Gallery
+First, register the NuGet repository if you haven't already:
 
 ```powershell
-Install-Module -Name AaTurpin.PSPowerControl -Scope CurrentUser
+Register-PSRepository -Name "NuGet" -SourceLocation "https://api.nuget.org/v3/index.json" -PublishLocation "https://www.nuget.org/api/v2/package/" -InstallationPolicy Trusted
+```
+
+Then install the module:
+
+```powershell
+Install-Module -Name AaTurpin.PSPowerControl -Repository NuGet -Scope CurrentUser
+```
+
+Or for all users (requires administrator privileges):
+
+```powershell
+Install-Module -Name AaTurpin.PSPowerControl -Repository NuGet -Scope AllUsers
 ```
 
 ### Import the Module
